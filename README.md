@@ -31,9 +31,10 @@ By using the builtin module in python, requirements is empty for this task.
 # Dockerfile
 ```
 FROM python:3.11-alpine
-WORKDIR /tasker_multithreading
+WORKDIR /tasker_api_creation
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["python", "src/producer_consumer.py"]
+EXPOSE 5000
+CMD ["python", "src/api_creation.py"]
 ```
