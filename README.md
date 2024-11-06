@@ -2,14 +2,15 @@
 ### using Python
 ```
 pip install -r requirements.txt
-python tasker_multithreading/src/producer_consumer.py
+python src/api_creation.py
 ```
 ### using Docker
 ```
-docker build -t tasker_1 .
-docker run tasker_1
+docker build --no-cache -t tasker_3 .
+docker run -p 5000:5000 tasker_3
 docker logs [CONTAINER]
 ```
+go your http://localhost:5000/greet to check the website
 # Structure of directory
 ```
 .
@@ -17,16 +18,16 @@ docker logs [CONTAINER]
 ├── dockerfile
 ├── requirements.txt
 ├── src
-│   └── producer_consumer.py
+│   └── api_creation.py
 └── static
-    └── tasker_multithreading.gif
+    └── tasker_api_creation.gif
 ```
 src: including the main source code of python file.  
 static: to save the static file as gif, picture, html and else.  
 # Requirements.txt
 By using the builtin module in python, requirements is empty for this task.  
 # Gif of demonstration
-![gif](static/task_multithreading.gif)  
+![gif](static/tasker_api_creation.gif)  
 # Dockerfile
 ```
 FROM python:3.11-alpine
